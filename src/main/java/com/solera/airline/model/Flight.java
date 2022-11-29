@@ -16,6 +16,8 @@ public class Flight {
 	private double price;
 	private LocalDateTime date;
 	private boolean luggage;
+	private int scales;
+	private String airline;
 	
 	// End of variable declaration
 	// -----
@@ -24,12 +26,15 @@ public class Flight {
 	// Constructors
 	// Does not construct with @param(flightId) because this value is automatically added
 	
-	public Flight(int id, String departure, String arrival, double price, LocalDateTime date, boolean luggage) {
+	public Flight(int id, String departure, String arrival, double price, LocalDateTime date, boolean luggage, int scales, String airline) {
+		this.flightId = id;
 		this.departureAirport = departure;
 		this.arrivalAirport = arrival;
 		this.price = price;
 		this.date = date;
 		this.luggage = luggage;
+		this.scales = scales;
+		this.airline = airline;
 	}
 	
 	// End of constructors
@@ -63,6 +68,14 @@ public class Flight {
 		return luggage;
 	}
 	
+	public int getScales() {
+		return scales;
+	}
+	
+	public String getAirline() {
+		return airline;
+	}
+	
 	//Setter
 	public void setFlightId(int flightId) {
 		this.flightId = flightId;
@@ -88,6 +101,13 @@ public class Flight {
 		this.luggage = luggage;
 	}
 	
+	public void setScales(int scales) {
+		this.scales = scales;
+	}
+	
+	public void setAirline(String airline) {
+		this.airline = airline;
+	}
 	// End of Getters and Setters
 	// +++++
 	
