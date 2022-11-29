@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-11-29T15:58:41 WET" name="Default suite" finished-at="2022-11-29T15:58:41 WET" duration-ms="154">
+    <groups>
+    </groups>
+    <test started-at="2022-11-29T15:58:41 WET" name="Default test" finished-at="2022-11-29T15:58:41 WET" duration-ms="154">
+      <class name="com.solera.airline.controller.FlightControllerTest">
+        <test-method signature="ensureThatUserApiCallFlightsByAirlineReturnsJsonContent()[pri:0, instance:com.solera.airline.controller.FlightControllerTest@51bd8b5c]" started-at="2022-11-29T15:58:41 WET" name="ensureThatUserApiCallFlightsByAirlineReturnsJsonContent" finished-at="2022-11-29T15:58:41 WET" duration-ms="127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ensureThatUserApiCallFlightsByAirlineReturnsJsonContent -->
+      </class> <!-- com.solera.airline.controller.FlightControllerTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
