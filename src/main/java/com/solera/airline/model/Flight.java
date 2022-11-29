@@ -91,5 +91,16 @@ public class Flight {
 	// End of Getters and Setters
 	// +++++
 	
-	
+	@Override
+	public String toString() {
+		return "Flight{" +
+				"flightId" + flightId +
+				"departureAirport" + departureAirport + '\'' +
+				"arrivalAirport" + arrivalAirport + '\'' +
+				"price" + price + '\'' +
+				"date" + date + '\'' +
+				"luggage" + luggage + '\'' +
+				"}";
+				
+	}
 }
