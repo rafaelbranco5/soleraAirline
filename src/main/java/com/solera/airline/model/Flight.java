@@ -130,6 +130,9 @@ public class Flight {
 				"price" + price + '\'' +
 				"date" + date + '\'' +
 				"luggage" + luggage + '\'' +
+				"scales" + scales + '\'' +
+				"airline" + airline + '\'' +
+				"duration" + duration + '\'' +
 				"}";
 	}
 }

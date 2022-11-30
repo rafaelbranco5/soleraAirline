@@ -52,7 +52,7 @@ public class FlightControllerTest {
 		assertThat(string).startsWith("application/json");
 	}
 
-	// Was having problems trying ot pass an array of int, but since URI.create takes in a String decided to pass the values as a String array
+	// Was having problems trying to pass an array of int, but since URI.create takes in a String decided to pass the values as a String array
 	@DataProvider(name = "flightsByNumberOfScales")
 	public String[] dataForFlightsByScalesTest() {
 		return new String[] {"0", "1", "2"};
@@ -75,5 +75,11 @@ public class FlightControllerTest {
 	@DataProvider(name = "flightByLuggageCheck")
 	public String[] dataForFlightByLuggageTest() {
 		return new String[] {"true", "false"};
+	}
+	@Test
+	public void ensureThatUserApiCallLuggageReturnsCode200(String luggageCheck) throws Exception {
+		HttpRequest request = HttpRequest.newBuilder().uri(URI.create("http://localhost:8080/luggage/" + "true")).build();
+		HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
+		assertThat(response.statusCode()).isEqualTo(200);
 	}
 }

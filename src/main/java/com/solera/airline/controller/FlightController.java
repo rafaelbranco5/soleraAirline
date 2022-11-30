@@ -1,5 +1,6 @@
 package com.solera.airline.controller;
 
+import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,16 @@ public class FlightController {
 	@GetMapping("/allFlights")
 	public List<Flight> retrieveAllFlights(){
 		return service.findAll();
+	}
+	
+	@GetMapping("/departureFlights")
+	public List<String> retrieveDepartureFlight(){
+		return service.findDepartureFlight();
+	}
+	
+	@GetMapping("/arrivalFlight")
+	public HashSet<String> retrieveArrivalFlight(){
+		return service.findArrivalFlight();
 	}
 	
 	@GetMapping("/airline/{airline}")

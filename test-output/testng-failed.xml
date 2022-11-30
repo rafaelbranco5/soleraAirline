@@ -5,12 +5,7 @@
     <classes>
       <class name="com.solera.airline.controller.FlightControllerTest">
         <methods>
-          <include name="ensureThatUserApiCallAllFlightsReturnsCode200"/>
-          <include name="ensureThatUserApiCallScalesReturnsJsonContent" invocation-numbers="0 1 2"/>
-          <include name="ensureThatUserApiCallAllFlightsReturnsJsonContent"/>
-          <include name="ensureThatApiCallFlightByAirlineReturnsCode200" invocation-numbers="0 1 2"/>
-          <include name="ensureThatUserApiCallScalesReturnsCode200" invocation-numbers="0 1 2"/>
-          <include name="ensureThatUserApiCallFlightsByAirlineReturnsJsonContent" invocation-numbers="0 1 2"/>
+          <include name="ensureThatUserApiCallLuggageReturnsCode200"/>
         </methods>
       </class> <!-- com.solera.airline.controller.FlightControllerTest -->
     </classes>
