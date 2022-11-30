@@ -50,14 +50,8 @@ public class FlightService {
 	}
 	
 	@SuppressWarnings({ "unchecked", "null" })
-	public HashSet<String> findArrivalFlight(){
-		List<String> arrivalAirports = null;
-		for (var s : flights) {
-			arrivalAirports.add(s.getArrivalAirport());
-		}
-		Set hashSet = new HashSet(arrivalAirports);
-		hashSet.addAll(arrivalAirports);
-		return (HashSet<String>) hashSet;
+	public List<String> findArrivalFlight(){
+		return Arrays.asList(arrivalCities);
 	}
 
 	public List<Flight> findByMaxScales(int numberOfScales) {
@@ -72,5 +66,11 @@ public class FlightService {
 				.filter(a -> Objects.equals(a.getLuggage().toLowerCase(), luggageCheck.toLowerCase()))
 				.collect(Collectors.toList());
 		return flightByAllowedOrDissallowedLuggage;
+	}
+
+	public List<Flight> findAvailableSchedule(String departureCity, LocalDateTime departureDay) {
+		// TODO Auto-generated method stub
+		
+		return null;
 	}
 }

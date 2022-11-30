@@ -1,10 +1,12 @@
 package com.solera.airline.controller;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.solera.airline.model.Flight;
@@ -29,7 +31,7 @@ public class FlightController {
 	}
 	
 	@GetMapping("/arrivalFlight")
-	public HashSet<String> retrieveArrivalFlight(){
+	public List<String> retrieveArrivalFlight(){
 		return service.findArrivalFlight();
 	}
 	
@@ -46,5 +48,10 @@ public class FlightController {
 	@GetMapping("/luggage/{luggageCheck}")
 	public List<Flight> retrieveByLuggage(@PathVariable String luggageChack){
 		return service.findByAllowedOrDissalloedLuggage(luggageChack);
+	}
+	
+	@GetMapping("/departure/{departureCity}/day/{departureDay0")
+	public List<Flight> retieveSchedule(@RequestParam String departureCity, @RequestParam LocalDateTime departureDay){
+		return service.findAvailableSchedule();
 	}
 }
