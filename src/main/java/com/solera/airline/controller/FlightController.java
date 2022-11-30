@@ -22,17 +22,18 @@ public class FlightController {
 		return service.findAll();
 	}
 	
-	@GetMapping("/flight/{airline}")
+	@GetMapping("/airline/{airline}")
 	public List<Flight> retrieveByAirline(@PathVariable String airline){
 		return service.findByAirline(airline);
-	/*	if (airline.equals("tap")) {
-			return "tap";
-		}
-		if (airline.equals("TAP")) {
-			return "UPPERCASE";
-		}else {
-			return "none";
-		}*/
-		
+	}
+	
+	@GetMapping("/scales/{numberOfScales}")
+	public List<Flight> retrieveBysacles(@PathVariable int numberOfScales){
+		return service.findByMaxScales(numberOfScales);
+	}
+	
+	@GetMapping("/luggage/{luggageCheck}")
+	public List<Flight> retrieveByLuggage(@PathVariable String luggageChack){
+		return service.findByAllowedOrDissalloedLuggage(luggageChack);
 	}
 }
