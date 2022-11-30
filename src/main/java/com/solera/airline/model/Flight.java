@@ -15,7 +15,7 @@ public class Flight {
 	private String arrivalAirport;
 	private double price;
 	private LocalDateTime date;
-	private boolean luggage;
+	private String luggage;
 	private int scales;
 	private String airline;
 	private double duration;
@@ -27,7 +27,7 @@ public class Flight {
 	// Constructors
 	// Does not construct with @param(flightId) because this value is automatically added
 	
-	public Flight(int id, String departure, String arrival, double price, LocalDateTime date, boolean luggage, int scales, String airline, double duration) {
+	public Flight(int id, String departure, String arrival, double price, LocalDateTime date, String luggage, int scales, String airline, double duration) {
 		this.flightId = id;
 		this.departureAirport = departure;
 		this.arrivalAirport = arrival;
@@ -66,7 +66,7 @@ public class Flight {
 		return date;
 	}
 	
-	public boolean getLuggage() {
+	public String getLuggage() {
 		return luggage;
 	}
 	
@@ -103,7 +103,7 @@ public class Flight {
 		this.date = date;
 	}
 	
-	public void setLuggage(boolean luggage) {
+	public void setLuggage(String luggage) {
 		this.luggage = luggage;
 	}
 	
