@@ -1,6 +1,7 @@
 package com.solera.airline.service;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -49,7 +50,6 @@ public class FlightService {
 		return Arrays.asList(departureCities);
 	}
 	
-	@SuppressWarnings({ "unchecked", "null" })
 	public List<String> findArrivalFlight(){
 		return Arrays.asList(arrivalCities);
 	}
@@ -67,10 +67,22 @@ public class FlightService {
 				.collect(Collectors.toList());
 		return flightByAllowedOrDissallowedLuggage;
 	}
+	
+	public List<Flight> findByDepartureCity(String departureCity){
+		List<Flight> flightByDepartureCity = flights.stream()
+				.filter(a -> Objects.equals(a.getDepartureAirport().toLowerCase(), departureCity.toLowerCase()))
+				.collect(Collectors.toList());
+		
+		return flightByDepartureCity;
+	}
 
 	public List<Flight> findAvailableSchedule(String departureCity, LocalDateTime departureDay) {
 		// TODO Auto-generated method stub
+		List<Flight> flightByDepartedCity = findByDepartureCity(departureCity);
+		List<Flight> flightByPossibleSchedule = flightByDepartedCity.stream()
+				.filter(a -> ChronoUnit.DAYS.between(a.getDate(), departureDay) <= 3)
+				.collect(Collectors.toList());
 		
-		return null;
+		return flightByPossibleSchedule;
 	}
 }
